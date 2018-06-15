@@ -1,13 +1,15 @@
-class TextMessage {
+const { MessageObject } = require('./message_object');
+
+class TextMessage extends MessageObject {
   /**
-   * TextMessage create line message object type text
+   * Create line message object type text
    *
    * ref: https://developers.line.me/en/docs/messaging-api/reference/#text-message
    * @param {string} text
    */
   constructor(text) {
     this.type = 'text';
-    this.text = text;
+    this.text = this._limitText(text, 2000);
   }
 }
 
