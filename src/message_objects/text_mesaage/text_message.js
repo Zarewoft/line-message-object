@@ -1,4 +1,4 @@
-const { MessageObject } = require('./message_object');
+const { MessageObject } = require('../message_object');
 
 class TextMessage extends MessageObject {
   /**
