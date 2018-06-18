@@ -2,9 +2,14 @@ import { TextMessage } from "./text_message";
 import { assert } from "chai";
 
 describe("TextMessage", () => {
-    it("should construct with first 2000 character", () => {
+    it("should construct text property with first 2000 character", () => {
         const textMessage = new TextMessage(getFullText());
         assert.equal(textMessage.text, getExpectedText());
+    });
+
+    it("should construct type property 'text'", () => {
+        const textMessage = new TextMessage("");
+        assert.equal(textMessage.type, "text");
     });
 });
 

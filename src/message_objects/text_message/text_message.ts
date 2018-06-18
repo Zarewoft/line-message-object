@@ -2,7 +2,7 @@ import { MessageObject } from "../message_object";
 
 class TextMessage extends MessageObject {
     text: string
-
+    type: string
     /**
      * Create line message object type text
      *
@@ -11,7 +11,8 @@ class TextMessage extends MessageObject {
      */
     constructor(text: string) {
         super();
-        this.text = this.limitText(text, 2000)
+        this.type = "text";
+        this.text = this.limitText(text, 2000);
     }
 }
 
