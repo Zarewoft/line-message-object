@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Zarewoft/line-message-object#readme",
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "@types/mocha": "^5.2.2",
+    "mocha": "^5.2.0",
+    "typescript": "^2.9.2"
   }
 }
