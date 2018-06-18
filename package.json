@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
-    "test": "mocha src/**/*.test.js"
+    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "doc": "typedoc --out doc"
   },
   "repository": {
     "type": "git",
@@ -19,9 +20,12 @@
   },
   "homepage": "https://github.com/Zarewoft/line-message-object#readme",
   "devDependencies": {
+    "@types/chai": "^4.1.4",
     "@types/mocha": "^5.2.2",
+    "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "rimraf": "^2.6.2",
+    "ts-node": "^6.1.1",
     "typescript": "^2.9.2"
   }
 }
