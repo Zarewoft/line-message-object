@@ -44,6 +44,11 @@ class StickerMessage extends MessageObject {
     return { message: message, error: null };
   }
 
+  /**
+   * Return line sticker message object
+   *
+   * @returns {StickerJSON}
+   */
   getJSON(): StickerJSON {
     return {
       type: this._type,
