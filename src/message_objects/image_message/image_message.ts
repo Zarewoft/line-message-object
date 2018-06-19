@@ -12,7 +12,7 @@ class ImageMessage extends MessageObject {
     this._type = "image";
   }
 
-  static New(originalContentUrl: string): MessageConstructResult {
+  static New(originalContentUrl: string): MessageConstructResult<ImageMessage> {
     const imageMessage = new ImageMessage();
     return {
       message: imageMessage,

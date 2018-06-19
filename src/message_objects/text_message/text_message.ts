@@ -1,13 +1,8 @@
-import { MessageObject } from "../message_object";
+import { MessageObject, MessageConstructResult } from "../message_object";
 
 type TextJSON = {
     type: string,
     text: string
-};
-
-type TextMessageConstructResult = {
-  message: TextMessage,
-  error: Error
 };
 
 class TextMessage extends MessageObject {
@@ -24,7 +19,7 @@ class TextMessage extends MessageObject {
         this._type = "text";
     }
 
-    static New(text: string): TextMessageConstructResult {
+    static New(text: string): MessageConstructResult<TextMessage> {
       const textMessage = new TextMessage();
       textMessage._text = textMessage._limitText(text, 2000);
       return {

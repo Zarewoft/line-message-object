@@ -1,3 +1,8 @@
+type MessageConstructResult<T extends MessageObject> = {
+  message: T,
+  error: Error
+};
+
 abstract class MessageObject {
   /**
    *
@@ -19,4 +24,4 @@ abstract class MessageObject {
   abstract getJSON(): object
 }
 
-export { MessageObject };
+export { MessageObject, MessageConstructResult };
