@@ -34,16 +34,16 @@ class VideoMessage extends MessageObject {
    * @returns {MessageConstructResult<VideoMessage>}
    */
   static New(originalContentUrl: string, previewImageUrl: string): MessageConstructResult<VideoMessage> {
-    if (!originalContentUrl) {
-      return { message: null, error: new Error("original content url is missing") };
-    } else if (!originalContentUrl.startsWith("https://", 0)) {
-      return { message: null, error: new Error("original content url is require https protocol") };
+    let error = MessageObject.validateURL(originalContentUrl);
+    if (error) {
+      error.message = `original content ${error.message}`;
+      return { message: null, error };
     }
 
-    if (!previewImageUrl) {
-      return { message: null, error: new Error("preview image url is missing") };
-    } else if (!previewImageUrl.startsWith("https://", 0)) {
-      return { message: null, error: new Error("preview image url is require https protocol") };
+    error = MessageObject.validateURL(previewImageUrl);
+    if (error) {
+      error.message = `preview image ${error.message}`;
+      return { message: null, error };
     }
 
     const videoMessage = new VideoMessage(originalContentUrl, previewImageUrl);
