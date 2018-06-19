@@ -4,6 +4,6 @@ import { assert } from "chai";
 describe("ImageMessage", () => {
     it("should construct with type 'image'", () => {
         const imageMessage = new ImageMessage();
-        assert.equal(imageMessage.type, "image");
+        assert.equal(imageMessage.getJSON().type, "image");
     });
 });

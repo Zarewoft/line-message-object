@@ -1,8 +1,13 @@
 import { MessageObject } from "../message_object";
 
+type TextJSON = {
+    type: string,
+    text: string
+};
+
 class TextMessage extends MessageObject {
-    text: string;
-    type: string;
+    private _type: string;
+    private _text: string;
     /**
      * Create line message object type text
      *
@@ -11,8 +16,15 @@ class TextMessage extends MessageObject {
      */
     constructor(text: string) {
         super();
-        this.type = "text";
-        this.text = this.limitText(text, 2000);
+        this._type = "text";
+        this._text = this.limitText(text, 2000);
+    }
+
+    getJSON(): TextJSON {
+        return {
+            type: this._type,
+            text: this._text
+        };
     }
 }
 

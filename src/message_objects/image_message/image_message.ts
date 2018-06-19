@@ -1,11 +1,26 @@
 import { MessageObject } from "../message_object";
 
-class ImageMessage extends MessageObject {
+type ImageJSON = {
     type: string
+}
+
+class ImageMessage extends MessageObject {
+    private _type: string;
 
     constructor() {
         super();
-        this.type = "image";
+        this._type = "image";
+    }
+
+    static New(): ImageMessage {
+        const imageMessage = new ImageMessage();
+        return imageMessage;
+    }
+
+    getJSON(): ImageJSON {
+        return {
+            type: this._type
+        };
     }
 }
 

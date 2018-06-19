@@ -4,12 +4,12 @@ import { TextMessage } from "./text_message";
 describe("TextMessage", () => {
     it("should construct text property with first 2000 character", () => {
         const textMessage = new TextMessage(getFullText());
-        assert.equal(textMessage.text, getExpectedText());
+        assert.equal(textMessage.getJSON().text, getExpectedText());
     });
 
     it("should construct type property 'text'", () => {
         const textMessage = new TextMessage("");
-        assert.equal(textMessage.type, "text");
+        assert.equal(textMessage.getJSON().type, "text");
     });
 });
 

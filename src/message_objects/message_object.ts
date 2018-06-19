@@ -1,4 +1,4 @@
-class MessageObject {
+abstract class MessageObject implements Message {
     /**
      *
      * @param {string} text
@@ -11,6 +11,12 @@ class MessageObject {
         }
         return text;
     }
+
+    abstract getJSON(): object
+}
+
+interface Message {
+    getJSON(): object
 }
 
 export { MessageObject };
