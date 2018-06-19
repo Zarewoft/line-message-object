@@ -2,18 +2,32 @@ import { assert } from "chai";
 import { StickerMessage } from "./sticker_message";
 
 describe("StickerMessage", () => {
-  it("should construct type property 'sticker'", () => {
-    const stickerMessage = new StickerMessage();
-    assert.equal(stickerMessage.getJSON().type, "sticker");
+  it("should construct sticker message 1", () => {
+    const stickerMessage = StickerMessage.New("packageId", "stickerId");
+    assert.deepEqual(stickerMessage.message.getJSON(), {
+      type: "sticker",
+      packageId: "packageId",
+      stickerId: "stickerId"
+    });
   });
 
-  it("should construct packageId property", () => {
-    const stickerMessage = new StickerMessage("packageId");
-    assert.equal(stickerMessage.getJSON().packageId, "packageId");
+  it("should construct sticker message 2", () => {
+    const stickerMessage = StickerMessage.New("packageId2", "stickerId2");
+    assert.deepEqual(stickerMessage.message.getJSON(), {
+      type: "sticker",
+      packageId: "packageId2",
+      stickerId: "stickerId2"
+    });
   });
 
-  it("should construct stickerId property", () => {
-    const stickerMessage = new StickerMessage(null, "stickerId");
-    assert.equal(stickerMessage.getJSON().stickerId, "stickerId");
+  it("should return error when packageId is undefined or empty", () => {
+    const stickerMessage = StickerMessage.New("", "stickerId");
+    assert.equal(stickerMessage.error.message, "package id is missing");
   });
+
+  it("should return error when stickerId is undefined or empty", () => {
+    const stickerMessage = StickerMessage.New("packageId", "");
+    assert.equal(stickerMessage.error.message, "sticker id is missing");
+  });
+
 });
