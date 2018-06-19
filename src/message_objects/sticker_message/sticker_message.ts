@@ -25,6 +25,14 @@ class StickerMessage extends MessageObject {
     this._type = "sticker";
   }
 
+  /**
+   * Create line message object type sticker with validate required field
+   *
+   * ref: https://developers.line.me/en/docs/messaging-api/reference/#sticker-message
+   * @param {string} packageId
+   * @param {string} stickerId
+   * @returns {MessageConstructResult<StickerMessage>}
+   */
   static New(packageId: string, stickerId: string): MessageConstructResult<StickerMessage> {
     if (!packageId) {
       return { message: null, error: new Error("package id is missing") };
