@@ -17,8 +17,15 @@ abstract class MessageObject {
     return text;
   }
 
-  static isTextOffLimit(text: string, maxCharacters: number) {
-    return text.length > maxCharacters;
+  static validateURL(url: string): Error {
+    if (!url) {
+      return new Error("url is missing");
+    } else if (!url.startsWith("https://", 0)) {
+      return new Error("url is required https protocol");
+    } else if (url.length > 1000) {
+      return new Error("url lenght is 1000 character max");
+    }
+    return null;
   }
 
   abstract getJSON(): object
