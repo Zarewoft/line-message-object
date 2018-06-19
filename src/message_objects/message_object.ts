@@ -10,14 +10,14 @@ abstract class MessageObject {
    * @param {number} maxCharacters
    * @returns {string}
    */
-  protected _limitText(text: string = "", maxCharacters: number) {
+  static limitText(text: string, maxCharacters: number) {
     if (text.length > maxCharacters) {
       return text.slice(0, maxCharacters);
     }
     return text;
   }
 
-  protected _isTextOffLimit(text: string = "", maxCharacters: number) {
+  static isTextOffLimit(text: string, maxCharacters: number) {
     return text.length > maxCharacters;
   }
 

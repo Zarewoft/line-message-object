@@ -14,14 +14,19 @@ class TextMessage extends MessageObject {
      * ref: https://developers.line.me/en/docs/messaging-api/reference/#text-message
      * @param {string} text
      */
-    constructor() {
+    constructor(text: string) {
         super();
         this._type = "text";
+        this._text = text;
     }
 
     static New(text: string): MessageConstructResult<TextMessage> {
-      const textMessage = new TextMessage();
-      textMessage._text = textMessage._limitText(text, 2000);
+      if (!text) {
+        return { message: null, error: new Error("text is missing") };
+      }
+      const limitText = MessageObject.limitText(text, 2000);
+
+      const textMessage = new TextMessage(limitText);
       return {
         message: textMessage,
         error: null
