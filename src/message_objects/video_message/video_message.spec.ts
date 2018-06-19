@@ -20,10 +20,10 @@ describe("VideoMessage", () => {
   it("should construct default value with empty string for originalContentUrl property", () => {
     const videoMessage = new VideoMessage();
     assert.equal(videoMessage.originalContentUrl, "");
-  })
+  });
 
   it("should construct default value with empty string for previewImageUrl property", () => {
     const videoMessage = new VideoMessage();
     assert.equal(videoMessage.previewImageUrl, "");
-  })
+  });
 });

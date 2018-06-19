@@ -1,9 +1,9 @@
-import { MessageObject } from "../message_object"
+import { MessageObject } from "../message_object";
 
 class VideoMessage extends MessageObject {
-  type: string
-  originalContentUrl: string
-  previewImageUrl: string
+  type: string;
+  originalContentUrl: string;
+  previewImageUrl: string;
 
   /**
    * Create line message object type video

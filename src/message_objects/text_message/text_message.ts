@@ -1,8 +1,8 @@
 import { MessageObject } from "../message_object";
 
 class TextMessage extends MessageObject {
-    text: string
-    type: string
+    text: string;
+    type: string;
     /**
      * Create line message object type text
      *
@@ -16,4 +16,4 @@ class TextMessage extends MessageObject {
     }
 }
 
-export { TextMessage }
+export { TextMessage };

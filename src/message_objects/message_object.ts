@@ -13,4 +13,4 @@ class MessageObject {
     }
 }
 
-export { MessageObject }
+export { MessageObject };

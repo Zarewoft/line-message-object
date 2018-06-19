@@ -1,5 +1,5 @@
-import { TextMessage } from "./text_message";
 import { assert } from "chai";
+import { TextMessage } from "./text_message";
 
 describe("TextMessage", () => {
     it("should construct text property with first 2000 character", () => {

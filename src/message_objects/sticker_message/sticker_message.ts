@@ -1,9 +1,9 @@
 import { MessageObject } from "../message_object";
 
 class StickerMessage extends MessageObject {
-  type: string
-  packageId: string
-  stickerId: string
+  type: string;
+  packageId: string;
+  stickerId: string;
 
   /**
    * Create line message object type sticker

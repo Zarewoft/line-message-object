@@ -10,10 +10,10 @@ describe("StickerMessage", () => {
   it("should construct packageId property", () => {
     const stickerMessage = new StickerMessage("packageId");
     assert.equal(stickerMessage.packageId, "packageId");
-  })
+  });
 
   it("should construct stickerId property", () => {
     const stickerMessage = new StickerMessage(null, "stickerId");
     assert.equal(stickerMessage.stickerId, "stickerId");
-  })
+  });
 });
