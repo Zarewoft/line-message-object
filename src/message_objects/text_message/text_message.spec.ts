@@ -3,13 +3,13 @@ import { TextMessage } from "./text_message";
 
 describe("TextMessage", () => {
     it("should construct text property with first 2000 character", () => {
-        const textMessage = new TextMessage(getFullText());
-        assert.equal(textMessage.getJSON().text, getExpectedText());
+        const textMessage = TextMessage.New(getFullText());
+        assert.equal(textMessage.message.getJSON().text, getExpectedText());
     });
 
     it("should construct type property 'text'", () => {
-        const textMessage = new TextMessage("");
-        assert.equal(textMessage.getJSON().type, "text");
+        const textMessage = TextMessage.New("");
+        assert.equal(textMessage.message.getJSON().type, "text");
     });
 });
 

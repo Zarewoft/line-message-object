@@ -5,6 +5,11 @@ type TextJSON = {
     text: string
 };
 
+type TextMessageConstructResult = {
+  message: TextMessage,
+  error: Error
+};
+
 class TextMessage extends MessageObject {
     private _type: string;
     private _text: string;
@@ -14,10 +19,18 @@ class TextMessage extends MessageObject {
      * ref: https://developers.line.me/en/docs/messaging-api/reference/#text-message
      * @param {string} text
      */
-    constructor(text: string) {
+    constructor() {
         super();
         this._type = "text";
-        this._text = this.limitText(text, 2000);
+    }
+
+    static New(text: string): TextMessageConstructResult {
+      const textMessage = new TextMessage();
+      textMessage._text = textMessage._limitText(text, 2000);
+      return {
+        message: textMessage,
+        error: null
+      };
     }
 
     getJSON(): TextJSON {
