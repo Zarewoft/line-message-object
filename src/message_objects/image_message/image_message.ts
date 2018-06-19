@@ -19,6 +19,18 @@ class ImageMessage extends MessageObject {
   }
 
   static New(originalContentUrl: string, previewImageUrl: string): MessageConstructResult<ImageMessage> {
+    if (!originalContentUrl) {
+      return { message: null, error: new Error("original content url is missing") };
+    } else if (!originalContentUrl.startsWith("https://", 0)) {
+      return { message: null, error: new Error("original content url is require https protocol") };
+    }
+
+    if (!previewImageUrl) {
+      return { message: null, error: new Error("preview image url is missing") };
+    } else if (!previewImageUrl.startsWith("https://", 0)) {
+      return { message: null, error: new Error("preview image url is require https protocol") };
+    }
+
     const imageMessage = new ImageMessage(originalContentUrl, previewImageUrl);
     return {
       message: imageMessage,
