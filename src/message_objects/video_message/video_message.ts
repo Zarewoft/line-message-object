@@ -1,9 +1,15 @@
 import { MessageObject } from "../message_object";
 
+type VideoJSON = {
+  type: string,
+  originalContentUrl: string,
+  previewImageUrl: string
+};
+
 class VideoMessage extends MessageObject {
-  type: string;
-  originalContentUrl: string;
-  previewImageUrl: string;
+  private _type: string;
+  private _originalContentUrl: string;
+  private _previewImageUrl: string;
 
   /**
    * Create line message object type video
@@ -14,9 +20,17 @@ class VideoMessage extends MessageObject {
    */
   constructor(originalContentUrl: string = "", previewImageUrl: string = "") {
     super();
-    this.type = "video";
-    this.originalContentUrl = originalContentUrl;
-    this.previewImageUrl = previewImageUrl;
+    this._type = "video";
+    this._originalContentUrl = originalContentUrl;
+    this._previewImageUrl = previewImageUrl;
+  }
+
+  getJSON(): VideoJSON {
+    return {
+      type: this._type,
+      originalContentUrl: this._originalContentUrl,
+      previewImageUrl: this._previewImageUrl
+    };
   }
 }
 

@@ -1,9 +1,15 @@
 import { MessageObject } from "../message_object";
 
+type StickerJSON = {
+  type: string,
+  packageId: string,
+  stickerId: string
+};
+
 class StickerMessage extends MessageObject {
-  type: string;
-  packageId: string;
-  stickerId: string;
+  private _type: string;
+  private _packageId: string;
+  private _stickerId: string;
 
   /**
    * Create line message object type sticker
@@ -14,9 +20,17 @@ class StickerMessage extends MessageObject {
    */
   constructor(packageId: string = "", stickerId: string = "") {
     super();
-    this.packageId = packageId;
-    this.stickerId = stickerId;
-    this.type = "sticker";
+    this._packageId = packageId;
+    this._stickerId = stickerId;
+    this._type = "sticker";
+  }
+
+  getJSON(): StickerJSON {
+    return {
+      type: this._type,
+      packageId: this._packageId,
+      stickerId: this._stickerId
+    };
   }
 }
 
