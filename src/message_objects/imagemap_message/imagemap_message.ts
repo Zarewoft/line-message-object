@@ -31,8 +31,8 @@ class ImagemapMessage extends MessageObject {
   private _type: string;
   private _baseUrl: string;
   private _altText: string;
-  private _baseSize: ImagemapBaseSize
-  private _actions: ImagemapAction[]
+  private _baseSize: ImagemapBaseSize;
+  private _actions: ImagemapAction[];
 
   constructor(baseUrl: string, altText: string, baseSize: ImagemapBaseSize, actions: ImagemapAction[]) {
     super();

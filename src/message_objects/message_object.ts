@@ -28,7 +28,7 @@ abstract class MessageObject {
     return null;
   }
 
-  abstract getJSON(): object
+  abstract getJSON(): object;
 }
 
 export { MessageObject, MessageConstructResult };

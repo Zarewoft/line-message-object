@@ -4,7 +4,7 @@ type ImageJSON = {
   type: string,
   originalContentUrl: string,
   previewImageUrl: string
-}
+};
 
 class ImageMessage extends MessageObject {
   private _type: string;
@@ -19,13 +19,13 @@ class ImageMessage extends MessageObject {
   }
 
   static New(originalContentUrl: string, previewImageUrl: string): MessageConstructResult<ImageMessage> {
-    let error = MessageObject.validateURL(originalContentUrl)
+    let error = MessageObject.validateURL(originalContentUrl);
     if (error) {
       error.message = `original content ${error.message}`;
       return { message: null, error: error };
     }
 
-    error = MessageObject.validateURL(previewImageUrl)
+    error = MessageObject.validateURL(previewImageUrl);
     if (error) {
       error.message = `preview image ${error.message}`;
       return { message: null, error: error };
@@ -47,4 +47,4 @@ class ImageMessage extends MessageObject {
   }
 }
 
-export { ImageMessage }
+export { ImageMessage };

@@ -4,7 +4,7 @@ type AudioJSON = {
   type: string,
   originalContentUrl: string,
   duration: number
-}
+};
 
 class AudioMessage extends MessageObject {
   private _type: string;
@@ -45,4 +45,4 @@ class AudioMessage extends MessageObject {
   }
 }
 
-export { AudioMessage }
+export { AudioMessage };

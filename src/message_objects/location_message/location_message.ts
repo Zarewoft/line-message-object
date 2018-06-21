@@ -6,7 +6,7 @@ type LocationJSON = {
   address: string,
   latitude: number,
   longitude: number
-}
+};
 
 class LocationMessage extends MessageObject {
   private _type: string;
