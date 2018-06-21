@@ -1,5 +1,5 @@
 import { MessageObject } from "../../message_objects/message_object";
-import { ActionType, ActionJSONType } from "../../action_objects";
+import { ActionType, ActionJSONType } from "../../action";
 
 type ButtonTemplateJSON = {
   type: string,
