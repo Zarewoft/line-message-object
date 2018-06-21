@@ -1,4 +1,4 @@
-import { MessageObject } from "../message_object";
+import { MessageObject, MessageConstructResult } from "../message_object";
 
 type LocationJSON = {
   type: string,
@@ -15,13 +15,20 @@ class LocationMessage extends MessageObject {
   private _latitude: number;
   private _longitude: number;
 
-  constructor(title: string, address: string, latitute: number, longitude: number) {
+  private constructor(title: string, address: string, latitude: number, longitude: number) {
     super();
     this._type = "location";
     this._title = title;
     this._address = address;
-    this._latitude = latitute;
+    this._latitude = latitude;
     this._longitude = longitude;
+  }
+
+  public static New(title: string, address: string, latitude: number, longitude: number): MessageConstructResult<LocationMessage> {
+    title = MessageObject.limitText(title, 100);
+    address = MessageObject.limitText(address, 100);
+    const locationMessage = new LocationMessage(title, address, latitude, longitude);
+    return { message: locationMessage, error: null };
   }
 
   getJSON(): LocationJSON {
