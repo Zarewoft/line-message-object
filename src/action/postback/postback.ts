@@ -1,4 +1,4 @@
-import { MessageObject } from "../../message_objects/message_object";
+import { MessageObject } from "../../message_object";
 import { LabelType } from "../../label";
 
 type PostbackJSON = {

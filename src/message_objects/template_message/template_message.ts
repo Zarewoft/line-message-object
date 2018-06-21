@@ -1,4 +1,4 @@
-import { MessageObject } from "../message_object";
+import { MessageObject } from "../../message_object";
 import { TemplateType, TemplateJSONType } from "../../template";
 
 type TemplateJSON = {

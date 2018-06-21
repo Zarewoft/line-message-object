@@ -1,4 +1,4 @@
-import { MessageObject, MessageConstructResult } from "../message_object";
+import { MessageObject, MessageConstructResult } from "../../message_object";
 
 type AudioJSON = {
   type: string,

@@ -1,4 +1,4 @@
-import { MessageObject } from "../../message_objects/message_object";
+import { MessageObject } from "../../message_object";
 import { ActionType, ActionJSONType } from "../../action";
 import { ImageAspectRatio, ImageSize } from "../type";
 

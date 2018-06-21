@@ -1,4 +1,4 @@
-import { MessageObject } from "../../message_objects/message_object";
+import { MessageObject } from "../../message_object";
 import { CarouselColumn, CarouselColumnJSON } from "../../column";
 import { ImageAspectRatio, ImageSize } from "../type";
 
