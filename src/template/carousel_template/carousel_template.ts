@@ -1,21 +1,21 @@
 import { MessageObject } from "../../message_objects/message_object";
-import { ColumnObject, ColumnObjectJSON } from "../colummn_object/column_object";
+import { CarouselColumn, CarouselColumnJSON } from "../../column";
 import { ImageAspectRatio, ImageSize } from "../type";
 
 type CarouselTemplateJSON = {
   type: string,
-  columns: ColumnObjectJSON[],
+  columns: CarouselColumnJSON[],
   imageAspectRatio?: ImageAspectRatio,
   imageSize?: ImageSize
 };
 
 class CarouselTemplate extends MessageObject {
   private _type: string;
-  private _columns: ColumnObject[];
+  private _columns: CarouselColumn[];
   private _imageAspectRatio?: ImageAspectRatio;
   private _imageSize?: ImageSize;
 
-  constructor(columns: ColumnObject[], imageAspectRatio?: ImageAspectRatio, imageSize?: ImageSize) {
+  constructor(columns: CarouselColumn[], imageAspectRatio?: ImageAspectRatio, imageSize?: ImageSize) {
     super();
     this._type = "carousel";
     this._columns = columns;

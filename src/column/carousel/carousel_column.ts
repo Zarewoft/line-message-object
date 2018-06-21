@@ -1,7 +1,7 @@
 import { MessageObject } from "../../message_objects/message_object";
 import { ActionType, ActionJSONType } from "../../action";
 
-type ColumnObjectJSON = {
+type CarouselColumnJSON = {
   text: string,
   actions: ActionJSONType[],
   thumbnailImageUrl?: string,
@@ -10,7 +10,7 @@ type ColumnObjectJSON = {
   defaultAction? : ActionJSONType
 };
 
-class ColumnObject extends MessageObject {
+class CarouselColumn extends MessageObject {
   private _text: string;
   private _actions: ActionType[];
   private _thumbnailImageUrl?: string;
@@ -18,7 +18,7 @@ class ColumnObject extends MessageObject {
   private _title? : string;
   private _defaultAction? : ActionType;
 
-  getJSON(): ColumnObjectJSON {
+  getJSON(): CarouselColumnJSON {
     const actions = this._actions.map(action => action.getJSON());
     return {
       text: this._text,
@@ -31,4 +31,4 @@ class ColumnObject extends MessageObject {
   }
 }
 
-export { ColumnObject, ColumnObjectJSON }
+export { CarouselColumn, CarouselColumnJSON }
