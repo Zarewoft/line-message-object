@@ -1,5 +1,5 @@
 import { assert } from "chai";
-import { TextMessage } from "./text_message";
+import { TextMessage } from "./text";
 
 describe("TextMessage", () => {
   it("should construct type property 'text'", () => {

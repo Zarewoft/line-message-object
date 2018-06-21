@@ -1,4 +1,4 @@
-import { AudioMessage } from "./audio_message";
+import { AudioMessage } from "./audio";
 import { assert } from "chai";
 
 describe("AudioMessage", () => {

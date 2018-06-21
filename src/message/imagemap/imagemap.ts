@@ -1,4 +1,4 @@
-import { MessageObject, MessageConstructResult } from "../message_object";
+import { MessageObject, MessageConstructResult } from "../../message_object";
 import { BaseSize, BaseSizeJSON } from "../../base_size";
 import { ImagemapURIAction, ImagemapURIActionJSON } from "../../action_objects/imagemap_action/imagemap_uri_action";
 import { ImagemapMessageAction, ImagemapMessageActionJSON } from "../../action_objects/imagemap_action/imagemap_message_action";

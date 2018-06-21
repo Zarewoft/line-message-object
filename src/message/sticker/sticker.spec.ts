@@ -1,5 +1,5 @@
 import { assert } from "chai";
-import { StickerMessage } from "./sticker_message";
+import { StickerMessage } from "./sticker";
 
 describe("StickerMessage", () => {
   it("should construct sticker message 1", () => {

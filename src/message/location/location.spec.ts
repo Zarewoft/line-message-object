@@ -1,4 +1,4 @@
-import { LocationMessage } from "./location_message";
+import { LocationMessage } from "./location";
 import { assert } from "chai";
 
 describe("LocationMessage", () => {

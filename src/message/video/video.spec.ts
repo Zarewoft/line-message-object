@@ -1,5 +1,5 @@
 import { assert } from "chai";
-import { VideoMessage } from "./video_message";
+import { VideoMessage } from "./video";
 
 describe("VideoMessage", () => {
   it("should construct video message 1", () => {

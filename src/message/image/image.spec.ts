@@ -1,4 +1,4 @@
-import { ImageMessage } from "./image_message";
+import { ImageMessage } from "./image";
 import { assert } from "chai";
 
 describe("ImageMessage", () => {
