@@ -29,4 +29,4 @@ class ConfirmTemplate extends MessageObject {
   }
 }
 
-export { ConfirmTemplate };
+export { ConfirmTemplate, ConfirmTemplateJSON };

@@ -35,4 +35,4 @@ class CarouselTemplate extends MessageObject {
   }
 }
 
-export { CarouselTemplate };
+export { CarouselTemplate, CarouselTemplateJSON };

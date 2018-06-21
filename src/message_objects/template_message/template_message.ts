@@ -1,20 +1,18 @@
 import { MessageObject } from "../message_object";
-import { ButtonTemplate } from "../../template";
+import { TemplateType, TemplateJSONType } from "../../template";
 
 type TemplateJSON = {
   type: string,
   altText: string,
-  template: object
+  template: TemplateJSONType
 };
-
-type Template = ButtonTemplate;
 
 class TemplateMessage extends MessageObject {
   private _type: string;
   private _altText: string;
-  private _template: Template;
+  private _template: TemplateType;
 
-  constructor(altText: string, template: Template) {
+  constructor(altText: string, template: TemplateType) {
     super();
     this._type = "template";
     this._altText = altText;

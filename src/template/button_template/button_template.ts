@@ -54,4 +54,4 @@ class ButtonTemplate extends MessageObject {
   }
 }
 
-export { ButtonTemplate };
+export { ButtonTemplate, ButtonTemplateJSON };
