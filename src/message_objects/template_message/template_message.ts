@@ -1,5 +1,5 @@
 import { MessageObject } from "../message_object";
-import { ButtonTemplate } from "./button_template/button_template";
+import { ButtonTemplate } from "../../template";
 
 type TemplateJSON = {
   type: string,
