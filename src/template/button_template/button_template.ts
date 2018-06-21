@@ -1,13 +1,14 @@
 import { MessageObject } from "../../message_objects/message_object";
 import { ActionType, ActionJSONType } from "../../action";
+import { ImageAspectRatio, ImageSize } from "../type";
 
 type ButtonTemplateJSON = {
   type: string,
   thumbnailImageUrl: string,
   text: string,
   actions: ActionJSONType[]
-  imageAspectRatio?: string,
-  imageSize?: string,
+  imageAspectRatio?: ImageAspectRatio,
+  imageSize?: ImageSize,
   imageBackgroundColor?: string,
   title?: string,
   defaultAction?: ActionJSONType,
@@ -18,13 +19,13 @@ class ButtonTemplate extends MessageObject {
   private _thumbnailImageUrl: string;
   private _text: string;
   private _actions: ActionType[];
-  private _imageAspectRatio?: string;
-  private _imageSize?: string;
+  private _imageAspectRatio?: ImageAspectRatio;
+  private _imageSize?: ImageSize;
   private _imageBackgroundColor?: string;
   private _title?: string;
   private _defaultAction?: ActionType;
 
-  constructor(thumbnailImageUrl: string, text: string, actions: ActionType[], imageAspectRatio?: string, imageSize?: string, imageBackgroundColor?: string, title?: string, defaultAction?: ActionType) {
+  constructor(thumbnailImageUrl: string, text: string, actions: ActionType[], imageAspectRatio?: ImageAspectRatio, imageSize?: ImageSize, imageBackgroundColor?: string, title?: string, defaultAction?: ActionType) {
     super();
     this._type = "buttons";
     this._thumbnailImageUrl = thumbnailImageUrl;
