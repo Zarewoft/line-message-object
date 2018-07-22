@@ -23,12 +23,16 @@ class PostbackAction extends MessageObject {
   }
 
   getJSON(): PostbackJSON {
-    return {
+    const json: PostbackJSON = {
       type: this._type,
       label: this._label.getValue(),
-      data: this._data,
-      displayText: this._displayText,
+      data: this._data
     };
+
+    if (this._displayText) {
+      json.displayText = this._displayText
+    }
+    return json;
   }
 }
 
