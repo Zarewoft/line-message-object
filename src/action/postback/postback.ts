@@ -6,7 +6,6 @@ type PostbackJSON = {
   label?: string,
   data: string,
   displayText?: string,
-  text?: string
 };
 
 class PostbackAction extends MessageObject {
@@ -14,15 +13,13 @@ class PostbackAction extends MessageObject {
   private _label: LabelType;
   private _data: string;
   private _displayText?: string;
-  private _text?: string;
 
-  constructor(label: LabelType, data: string, displayText?: string, text?: string) {
+  constructor(label: LabelType, data: string, displayText?: string) {
     super();
     this._type = "postback";
     this._label = label;
     this._data = data;
     this._displayText = displayText;
-    this._text = text;
   }
 
   getJSON(): PostbackJSON {
@@ -31,7 +28,6 @@ class PostbackAction extends MessageObject {
       label: this._label.getValue(),
       data: this._data,
       displayText: this._displayText,
-      text: this._text
     };
   }
 }
