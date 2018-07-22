@@ -20,7 +20,6 @@ describe("ImageMessage", () => {
     });
   });
 
-
   it("should return error when content url is undefined or empty", () => {
     const imageMessage = ImageMessage.New("", "https://image.jpg")
     assert.equal(imageMessage.error.message, "original content url is missing")
