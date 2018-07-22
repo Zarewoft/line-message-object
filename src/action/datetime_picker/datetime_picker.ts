@@ -37,15 +37,26 @@ class DatetimePickerAction extends MessageObject {
   }
 
   getJSON(): DatetimePickerJSON {
-    return {
+    const json: DatetimePickerJSON = {
       type: this._type,
       label: this._label.getValue(),
       data: this._data,
-      mode: this._mode,
-      initial: this._initial,
-      max: this._max,
-      min: this._min
-    };
+      mode: this._mode
+    }
+
+    if (this._initial) {
+      json.initial = this._initial;
+    }
+
+    if (this._max) {
+      json.max = this._max;
+    }
+
+    if (this._min) {
+      json.min = this._min;
+    }
+
+    return json;
   }
 }
 
