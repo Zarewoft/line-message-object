@@ -1,4 +1,4 @@
-import { MessageObject, MessageConstructResult } from "../../message_objects/message_object";
+import { MessageObject, MessageConstructResult } from "../../message_object";
 import { Area, AreaJSON } from "../../area";
 import { Label } from "../../label";
 
